@@ -19,148 +19,8 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 15px; }
 
-.form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 700px; }
-
-.form__pag-num {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin-bottom: 16px; }
-
-.pag-num__page {
-  padding: 10px 16px;
-  background: #ffffff;
-  margin-right: 8px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  cursor: pointer; }
-
-.form__description {
-  margin-bottom: 40px; }
-
-.form__user-interaction {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 150px; }
-
-/*потерететь*/
-.form__user-interaction > input, select {
-  width: 300px;
-  height: 40px;
-  padding-left: 10px;
-  font-family: inherit;
-  font-size: 15px;
-  color: #bbbbbb;
-  border: 0px;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  cursor: pointer;
-  background-color: #ffffff; }
-
-.user-interaction__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-bottom: 16px; }
-
-input[type="text"], input[type="email"] {
-  width: 300px;
-  height: 40px;
-  padding-left: 10px;
-  font-family: inherit;
-  font-size: 15px;
-  color: #bbbbbb;
-  border: 0px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  cursor: pointer;
-  background-color: #ffffff;
-  outline: none; }
-
-.user-interaction__item > input :last-child {
-  margin-bottom: 0px; }
-
-.social-networks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 500px; }
-
-.social-networks__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 16px;
-  height: 40px; }
-
-.social-networks__item :last-child {
-  margin-bottom: 0px; }
-
-.user-interaction__images {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-
-.user-interaction__images > img {
-  height: 150px;
-  width: 150px;
-  margin-right: 16px;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-  cursor: pointer; }
-
-.choosed-image {
-  border: 3px solid #ff9800; }
-
-.form__pag-nav {
+/* Пагинация по номера страниц */
+.pagination-pg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -169,14 +29,36 @@ input[type="text"], input[type="email"] {
       -ms-flex-direction: row;
           flex-direction: row; }
 
-.pag-nav {
+.pagination-pg__item {
+  padding: 10px 16px;
+  background: #ffffff;
+  margin-right: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  cursor: pointer; }
+
+.pagination-pg__item:last-of-type {
+  margin-right: 0px; }
+
+/**/
+/* Пагинация кнопками */
+.pagination-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+
+.pagination-btn__item {
   color: #ff9800;
   background: #ffffff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   cursor: pointer;
   padding: 10px 32px;
-  margin-right: 16px;
+  margin-left: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,31 +70,168 @@ input[type="text"], input[type="email"] {
       -ms-flex-pack: justify;
           justify-content: space-between; }
 
-.pag-nav--end {
+.pagination-btn__item:first-of-type {
+  margin-left: 0px; }
+
+.pagination-btn__finish {
   color: #ffffff;
   background: #ff9800; }
 
-.not-active {
+/**/
+/* Кнопки */
+.button--display-none {
+  display: none; }
+
+.button--not-active {
   pointer-events: none;
   cursor: default;
   color: #bbbbbb; }
 
-.is-active {
+.button--is-active {
   color: #ff9800; }
 
-.cur-page {
-  color: #ff9800; }
+/**/
+/* Анкета */
+.questionnaire {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 10px; }
 
-.not-valid-msg {
+.questionnaire__description {
+  margin-top: 16px;
+  margin-bottom: 40px; }
+
+.questionnaire__data-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 150px; }
+
+/**/
+/* Форма */
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.form__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 16px; }
+
+.form__item--space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.form__item:last-of-type {
+  margin-bottom: 0px; }
+
+.form__social-network {
+  margin-right: 16px; }
+
+.form__input {
+  min-width: 300px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 15px;
+  border: 0px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: #ffffff;
+  outline: none; }
+
+.form__input--not-valid {
+  outline: 2px solid red; }
+
+.form__input--hidden {
+  visibility: hidden; }
+
+.form__error {
   color: red;
-  margin-left: 20px; }
+  margin-left: 16px; }
 
-.display-none {
-  display: none; }
+.form__error--hidden {
+  visibility: hidden; }
 
-.not-valid-input {
-  border: 2px solid red; }
+/**/
+/* Плейсхолдеры для инпутов */
+::-webkit-input-placeholder {
+  color: #bbbbbb; }
 
+::-moz-placeholder {
+  color: #bbbbbb; }
+
+:-moz-placeholder {
+  color: #bbbbbb; }
+
+:-ms-input-placeholder {
+  color: #bbbbbb; }
+
+:focus::-webkit-input-placeholder {
+  color: transparent; }
+
+:focus::-moz-placeholder {
+  color: transparent; }
+
+:focus:-moz-placeholder {
+  color: transparent; }
+
+:focus:-ms-input-placeholder {
+  color: transparent; }
+
+/**/
+/* Блок картинки с животными*/
+.animal-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.animal-img__item {
+  height: 150px;
+  width: 150px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  cursor: pointer; }
+
+.animal-img__item--is-choosed {
+  outline: 3px solid #ff9800; }
+
+/**/
+/*TODO*/
 .final-card {
   padding: 24px;
   background-color: #ffffff;

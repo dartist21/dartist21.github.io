@@ -34,11 +34,11 @@
   
   let questionnaire = new Form();
   
-    function pagination(curStep) {
-    let pagItems = document.querySelectorAll('.pag-num__page');
-    let prev = document.querySelector('#prev');
-    let next = document.querySelector('#next');
-    let final = document.querySelector('#final');
+      function pagination(curStep) {
+    let pagItems = document.querySelectorAll('.pagination-pg__item');
+    let prev = document.querySelector('.pagination-btn__prev');
+    let next = document.querySelector('.pagination-btn__next');
+    let finish = document.querySelector('.pagination-btn__finish');
   
     for (let i = 0; i < pagItems.length; i++) {
       pagItems[i].addEventListener('click', changePage);
@@ -50,43 +50,45 @@
     if (next) {
       next.addEventListener('click', goNext);
     }
-    if (final) {
-      final.addEventListener('click', goFinal);
+    if (finish) {
+      finish.addEventListener('click', goFinish);
     }
   
   
     switch (curStep) {
       case 1:
-        prev.classList.add('not-active');
+        prev.classList.add('button--not-active');
         for (let i = curStep; i < pagItems.length; i++) {
-          pagItems[i].classList.add('not-active');
+          pagItems[i].classList.add('button--not-active');
         }
         break;
       case 2:
         for (let i = curStep - 2; i >= 0; --i) {
-          pagItems[i].classList.add('is-active');
+          pagItems[i].classList.add('button--is-active');
         }
         for (let i = curStep; i < pagItems.length; i++) {
-          pagItems[i].classList.add('not-active');
+          pagItems[i].classList.add('button--not-active');
         }
         break;
       case 3:
         for (let i = curStep - 2; i >= 0; --i) {
-          pagItems[i].classList.add('is-active');
+          pagItems[i].classList.add('button--is-active');
         }
         for (let i = curStep; i < pagItems.length; i++) {
-          pagItems[i].classList.add('not-active');
+          pagItems[i].classList.add('button--not-active');
         }
         break;
       case 4:
         for (let i = curStep - 2; i >= 0; --i) {
-          pagItems[i].classList.add('is-active');
+          pagItems[i].classList.add('button--is-active');
         }
         for (let i = curStep; i < pagItems.length; i++) {
-          pagItems[i].classList.add('not-active');
+          pagItems[i].classList.add('button--not-active');
         }
+        next.classList.add('button--display-none');
+        finish.classList.remove('button--display-none');
         break;
-      case final:
+      case finish:
   
           break;
       default:
@@ -110,7 +112,7 @@
       page.redirect('/step' + nextStep);
     }
   
-    function goFinal() {
+    function goFinish() {
       page.redirect('/final');
     }
   
@@ -161,8 +163,11 @@
     let curStep = 1;
     pagination(curStep);
   
-    let nameInput = rootElement.querySelector('input[name="name"]');
-    let emailInput = rootElement.querySelector('input[name="email"]');
+    let nameInput = rootElement.querySelector('.form__name');
+    let emailInput = rootElement.querySelector('.form__email');
+  
+    console.log(nameInput.value);
+  
   
     let nameError = rootElement.querySelector('#name-error')
     let emailError = rootElement.querySelector('#email-error')
@@ -180,8 +185,8 @@
         resetStateName(el);
         questionnaire.setInformation('username', nameInputValue);
       } else {
-        el.target.parentNode.classList.add('not-valid-input');
-        nameError.classList.remove('display-none');
+        el.target.classList.add('form__input--not-valid');
+        nameError.classList.remove('form__error--hidden');
       }
     }
   
@@ -193,20 +198,20 @@
         resetStateEmail(el);
         questionnaire.setInformation('email', emailInputValue);
   
-      } else if (emailError.classList.contains('display-none')) {
-        el.target.parentNode.classList.add('not-valid-input');
-        emailError.classList.remove('display-none');
+      } else if (emailError.classList.contains('form__error--hidden')) {
+        el.target.classList.add('form__input--not-valid');
+        emailError.classList.remove('form__error--hidden');
       }
     }
   
     function resetStateEmail(el) {
-      emailError.classList.add('display-none');
-      el.target.parentNode.classList.remove('not-valid-input');
+      emailError.classList.add('form__error--hidden');
+      el.target.classList.remove('form__input--not-valid');
     }
   
     function resetStateName(el) {
-      nameError.classList.add('display-none');
-      el.target.parentNode.classList.remove('not-valid-input');
+      nameError.classList.add('form__error--hidden');
+      el.target.classList.remove('form__input--not-valid');
     }
   }
   
@@ -286,37 +291,37 @@
       if (el.target.checked) {
         switch (el.target.name) {
           case 'check_fb':
-            inputFb.classList.remove('display-none');
+            inputFb.classList.remove('form__input--hidden');
             break;
           case 'check_vk':
-            inputVk.classList.remove('display-none');
+            inputVk.classList.remove('form__input--hidden');
             break;
           case 'check_tw':
-            inputTw.classList.remove('display-none');
+            inputTw.classList.remove('form__input--hidden');
             break;
           case 'check_ok':
-            inputOk.classList.remove('display-none');
+            inputOk.classList.remove('form__input--hidden');
             break;
           default:
-            console.log('errror in switch');
+            console.log('error in switch');
             break;
         }
       } else {
         switch (el.target.name) {
           case 'check_fb':
-            inputFb.classList.add('display-none');
+            inputFb.classList.add('form__input--hidden');
             break;
           case 'check_vk':
-            inputVk.classList.add('display-none');
+            inputVk.classList.add('form__input--hidden');
             break;
           case 'check_tw':
-            inputTw.classList.add('display-none');
+            inputTw.classList.add('form__input--hidden');
             break;
           case 'check_ok':
-            inputOk.classList.add('display-none');
+            inputOk.classList.add('form__input--hidden');
             break;
           default:
-            console.log('errror in switch');
+            console.log('error in switch');
             break;
         }
       }
@@ -347,16 +352,16 @@
             console.log('errror in switch');
             break;
         }
-      } else if (!el.target.parentNode.classList.contains('display-none')) {
-        el.target.parentNode.classList.add('not-valid-input');
-        urlError.classList.remove('display-none');
+      } else if (!el.target.classList.contains('form__error--hidden')) {
+        el.target.classList.add('form__input--not-valid');
+        urlError.classList.remove('form__error--hidden');
       }
     }
   
     function resetState(el) {
-      if (el.target.parentNode.classList.contains('not-valid-input')) {
-        urlError.classList.add('display-none');
-        el.target.parentNode.classList.remove('not-valid-input');
+      if (el.target.classList.contains('form__input--not-valid')) {
+        urlError.classList.add('form__error--hidden');
+        el.target.classList.remove('form__input--not-valid');
       }
     }
   }
@@ -367,7 +372,7 @@
     let curStep = 4;
     pagination(curStep);
   
-    let animalImages = rootElement.querySelectorAll('.animal');
+    let animalImages = rootElement.querySelectorAll('.animal-img__item');
     let animalError = rootElement.querySelector('#animal-error');
   
     for (let i = 0; i < animalImages.length; i++) {
@@ -375,16 +380,16 @@
     }
   
     function checkAnimal(el) {
-      animalError.classList.add('display-none');
+      animalError.classList.add('form__error--hidden');
   
       for (let i = 0; i < animalImages.length; i++) {
-        animalImages[i].style.outline = '';
+        animalImages[i].classList.remove('animal-img__item--is-choosed');
       }
   
-      el.target.style.outline = '3px solid #ff9800';
+      el.target.classList.add('animal-img__item--is-choosed');
   
       if (el.target.dataset.animal === 'dog') {
-        animalError.classList.remove('display-none');
+        animalError.classList.remove('form__error--hidden');
       } else {
         questionnaire.setInformation('catUrl', el.target.currentSrc);
       }
