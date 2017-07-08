@@ -1,10 +1,10 @@
+Handlebars.registerPartial("pagination-btn", Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"pagination-btn\">\n  <a class=\"pagination-btn__item pagination-btn__prev\">\n    <i class=\"material-icons\">keyboard_arrow_left</i>\n    <span class=\"pagination-btn__text\">Предыдущий</span>\n  </a>\n  <a class=\"pagination-btn__item pagination-btn__next\">\n    <span class=\"pagination-btn__text\">Следующий</span>\n    <i class=\"material-icons\">keyboard_arrow_right</i>\n  </a>\n  <a class=\"pagination-btn__item pagination-btn__finish button--display-none\">Завершить</a>\n    </div>\n</div>\n";
+},"useData":true}));
 this["templates"] = this["templates"] || {};
 this["templates"]["404"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<a href=\"/step1\">Start</a>\n";
 },"useData":true});
-Handlebars.registerPartial("pagination-btn", Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div class=\"pagination-btn\">\n  <a class=\"pagination-btn__item pagination-btn__prev\"><i class=\"material-icons\">keyboard_arrow_left</i> Предыдущий</a>\n  <a class=\"pagination-btn__item pagination-btn__next\">Следующий <i class=\"material-icons\">keyboard_arrow_right</i></a>\n  <a class=\"pagination-btn__item pagination-btn__finish button--display-none\">Завершить</a>\n    </div>\n</div>\n";
-},"useData":true}));
 this["templates"]["final"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<div class=\"profile-card\">\n  <div class=\"profile-card__information\">\n    <div class=\"profile-card__personal\">\n      <span class=\"profile-card__name\">Александр Александрович</span>\n      <span class=\"profile-card__email\">alex@lun.ua</span>\n    </div>\n    <span class=\"profile-card__location\">Киев, Украина</span>\n    <div class=\"profile-card__social-networks\">\n      <span class=\"profile-card__fb\">Facebook: fb.com/alex</span>\n      <span class=\"profile-card__vk\">Twitter: twitter.com/alex</span>\n      <span class=\"profile-card__tw\"></span>\n      <span class=\"profile-card__ok\"></span>\n    </div>\n  </div>\n  <img class=\"profile-card__image\" src=\"img/cat1.jpg\" alt=\"\">\n</div>\n<a class=\"pagination-btn__item pagination-btn__reset\">Пройти заново</a>\n";
 },"useData":true});
