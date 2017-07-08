@@ -15,6 +15,10 @@
       -ms-flex-pack: center;
           justify-content: center;
   overflow: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #f5f5f5;
   font-family: 'Open Sans', sans-serif;
   font-size: 15px; }
@@ -76,6 +80,11 @@
 .pagination-btn__finish {
   color: #ffffff;
   background: #ff9800; }
+
+.pagination-btn__reset {
+  color: #ffffff;
+  background: #ff9800;
+  margin-top: 32px; }
 
 /**/
 /* Кнопки */
@@ -179,6 +188,17 @@
 .form__error--hidden {
   visibility: hidden; }
 
+.form__error--display-none {
+  display: none; }
+
+.form__input--not-active {
+  pointer-events: none;
+  cursor: default;
+  color: #bbbbbb; }
+
+.form__error--margin-top-20 {
+  margin-top: 20px; }
+
 /**/
 /* Плейсхолдеры для инпутов */
 ::-webkit-input-placeholder {
@@ -231,8 +251,8 @@
   outline: 3px solid #ff9800; }
 
 /**/
-/*TODO*/
-.final-card {
+/* Блок итоговой карточки */
+.profile-card {
   padding: 24px;
   background-color: #ffffff;
   display: -webkit-box;
@@ -248,16 +268,7 @@
   -ms-flex-wrap: wrap-reverse;
       flex-wrap: wrap-reverse; }
 
-.info__personal, .info__social {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
-.final-card__info {
+.profile-card__information {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -270,15 +281,39 @@
           justify-content: space-between;
   margin-right: 50px; }
 
-.card-name {
+.profile-card__image {
+  height: 195px;
+  width: 200px; }
+
+.profile-card__personal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.profile-card__social-networks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.profile-card__name {
   font-size: 20px; }
 
-.card-email, .card-location {
+.profile-card__email {
   color: #bbbbbb;
   font-size: 15px; }
 
-.final-card__image > img {
-  height: 195px;
-  width: 200px; }
+.profile-card__location {
+  color: #bbbbbb;
+  font-size: 15px; }
+
+/**/
 
 /*# sourceMappingURL=style.css.map */
